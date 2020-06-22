@@ -1,8 +1,13 @@
 // Add BandInput component
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class BandInput extends Component {
+<<<<<<< HEAD
   state = {
+=======
+  this.state = {
+>>>>>>> 98ce6907ed973f06ce53395bcb4502273ed42bd8
     name: ''
   }
   
@@ -30,11 +35,19 @@ class BandInput extends Component {
     	    <label>Name</label>
           <input type="text" onChange={ this.handleChange } value={this.state.name}/>
           
+<<<<<<< HEAD
           <input type="submit" />
+=======
+          <input type="submit" onSumbit={ this.handleSubmit }/>
+>>>>>>> 98ce6907ed973f06ce53395bcb4502273ed42bd8
        </form>
       </div>
     )
   }
 }
 
-export default BandInput
+const mapDispatchToProps = dispatch => ({
+  addBand: formData => dispatch({ type: 'ADD_BAND', payload: formData })
+})
+
+export default connect(null, mapDispatchToProps)(BandInput)
